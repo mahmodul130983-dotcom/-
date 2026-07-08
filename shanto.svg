@@ -1,0 +1,1067 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 300 700">
+
+<!-- ==========================================
+     PART 8.2A
+     SHANTO BASE
+========================================== -->
+
+<defs>
+
+<!-- Skin -->
+
+<radialGradient
+id="skinGradient"
+cx="45%"
+cy="30%"
+r="70%">
+
+<stop offset="0%"
+stop-color="#FFE2C7"/>
+
+<stop offset="100%"
+stop-color="#E8B18C"/>
+
+</radialGradient>
+
+<!-- Hair -->
+
+<linearGradient
+id="hairGradient"
+x1="0%"
+y1="0%"
+x2="100%"
+y2="100%">
+
+<stop offset="0%"
+stop-color="#2A2A2A"/>
+
+<stop offset="100%"
+stop-color="#000000"/>
+
+</linearGradient>
+
+<!-- Suit -->
+
+<linearGradient
+id="suitGradient"
+x1="0%"
+y1="0%"
+x2="0%"
+y2="100%">
+
+<stop offset="0%"
+stop-color="#2D3F63"/>
+
+<stop offset="100%"
+stop-color="#101722"/>
+
+</linearGradient>
+
+</defs>
+
+<!-- Soft Glow -->
+
+<ellipse
+cx="150"
+cy="250"
+rx="130"
+ry="220"
+fill="#ffffff"
+opacity=".03"/>
+
+<!-- Neck -->
+
+<rect
+x="137"
+y="188"
+width="26"
+height="38"
+rx="10"
+fill="url(#skinGradient)"/>
+
+<!-- Face -->
+
+<ellipse
+cx="150"
+cy="120"
+rx="60"
+ry="74"
+fill="url(#skinGradient)"/>
+
+<!-- Face Highlight -->
+
+<ellipse
+cx="132"
+cy="82"
+rx="18"
+ry="10"
+fill="#ffffff"
+opacity=".18"/>
+
+<!-- Chin Shadow -->
+
+<ellipse
+cx="150"
+cy="170"
+rx="18"
+ry="8"
+fill="#C98A65"
+opacity=".18"/>
+
+<!-- Left Ear -->
+
+<ellipse
+cx="91"
+cy="122"
+rx="8"
+ry="12"
+fill="url(#skinGradient)"/>
+
+<!-- Right Ear -->
+
+<ellipse
+cx="209"
+cy="122"
+rx="8"
+ry="12"
+fill="url(#skinGradient)"/>
+
+<!-- Hair Back -->
+
+<path
+d="
+M86 122
+C82 18
+218 18
+214 128
+
+Q205 186
+150 192
+
+Q95 186
+86 122
+Z"
+
+fill="url(#hairGradient)"/>
+
+<!-- Hair Front -->
+
+<path
+d="
+M96 96
+
+Q112 38
+150 26
+
+Q188 38
+204 94
+
+Q182 72
+150 68
+
+Q118 70
+96 96
+
+Z"
+
+fill="#080808"/>
+
+<!-- Left Hair Lock -->
+
+<path
+d="
+M98 98
+
+Q82 150
+
+98 208
+
+Q110 180
+
+108 122
+
+Z"
+
+fill="#111111"/>
+
+<!-- Right Hair Lock -->
+
+<path
+d="
+M202 98
+
+Q218 150
+
+202 208
+
+Q190 180
+
+192 122
+
+Z"
+
+fill="#111111"/>
+
+<!-- Hair Shine -->
+
+<path
+d="
+M120 40
+
+Q150 26
+
+180 40"
+
+fill="none"
+
+stroke="#666666"
+
+stroke-width="3"
+
+stroke-linecap="round"
+
+opacity=".35"/>
+  <!-- ==========================================
+     PART 8.2B
+     FACE DETAILS
+========================================== -->
+
+<!-- Left Eyebrow -->
+<path
+d="M116 96
+Q132 90 145 96"
+fill="none"
+stroke="#2b1b12"
+stroke-width="4"
+stroke-linecap="round"/>
+
+<!-- Right Eyebrow -->
+<path
+d="M155 96
+Q168 90 184 96"
+fill="none"
+stroke="#2b1b12"
+stroke-width="4"
+stroke-linecap="round"/>
+
+<!-- Left Eye -->
+<ellipse
+cx="132"
+cy="116"
+rx="10"
+ry="6"
+fill="#ffffff"/>
+
+<circle
+cx="132"
+cy="116"
+r="4"
+fill="#3b2417"/>
+
+<circle
+cx="133"
+cy="115"
+r="1.4"
+fill="#ffffff"/>
+
+<!-- Right Eye -->
+<ellipse
+cx="168"
+cy="116"
+rx="10"
+ry="6"
+fill="#ffffff"/>
+
+<circle
+cx="168"
+cy="116"
+r="4"
+fill="#3b2417"/>
+
+<circle
+cx="169"
+cy="115"
+r="1.4"
+fill="#ffffff"/>
+
+<!-- Upper Eyelids -->
+<path
+d="M122 111
+Q132 105 142 111"
+fill="none"
+stroke="#111"
+stroke-width="1.5"/>
+
+<path
+d="M158 111
+Q168 105 178 111"
+fill="none"
+stroke="#111"
+stroke-width="1.5"/>
+
+<!-- Nose -->
+<path
+d="
+M150 118
+Q147 138 152 148"
+fill="none"
+stroke="#C98A65"
+stroke-width="2"
+stroke-linecap="round"/>
+
+<!-- Nose Shadow -->
+<ellipse
+cx="151"
+cy="146"
+rx="5"
+ry="2"
+fill="#C98A65"
+opacity=".18"/>
+
+<!-- Smile -->
+<path
+d="
+M134 166
+Q150 177
+166 166"
+fill="none"
+stroke="#B55A5A"
+stroke-width="3"
+stroke-linecap="round"/>
+
+<!-- Lip Highlight -->
+<path
+d="
+M140 166
+Q150 170
+160 166"
+fill="none"
+stroke="#F8B7C7"
+stroke-width="1.2"/>
+
+<!-- Beard Shadow -->
+<ellipse
+cx="150"
+cy="170"
+rx="24"
+ry="12"
+fill="#000000"
+opacity=".05"/>
+
+<!-- Left Blush -->
+<ellipse
+cx="110"
+cy="140"
+rx="9"
+ry="5"
+fill="#FFB0B0"
+opacity=".18"/>
+
+<!-- Right Blush -->
+<ellipse
+cx="190"
+cy="140"
+rx="9"
+ry="5"
+fill="#FFB0B0"
+opacity=".18"/>
+
+<!-- Eye Shine -->
+<circle
+cx="134"
+cy="114"
+r="1.2"
+fill="#ffffff"/>
+
+<circle
+cx="170"
+cy="114"
+r="1.2"
+fill="#ffffff"/>
+
+<!-- Face Highlight -->
+<ellipse
+cx="150"
+cy="120"
+rx="38"
+ry="52"
+fill="#ffffff"
+opacity=".03"/>
+
+<!-- Small Romantic Sparkles -->
+<text
+x="88"
+y="72"
+font-size="10"
+fill="#FFE082"
+opacity=".8">✨</text>
+
+<text
+x="202"
+y="66"
+font-size="10"
+fill="#FFE082"
+opacity=".8">✨</text>
+
+<!-- Floating Heart -->
+<text
+x="215"
+y="92"
+font-size="10"
+fill="#FF6FA8"
+opacity=".75">❤</text>
+  <!-- ==========================================
+     PART 8.2C
+     BODY + SUIT
+========================================== -->
+
+<!-- Neck Shadow -->
+<rect
+x="140"
+y="190"
+width="20"
+height="34"
+rx="8"
+fill="#C98A65"
+opacity=".18"/>
+
+<!-- Shirt Collar Left -->
+<path
+d="
+M128 220
+L145 202
+L150 230
+Z"
+fill="#ffffff"/>
+
+<!-- Shirt Collar Right -->
+<path
+d="
+M172 220
+L155 202
+L150 230
+Z"
+fill="#ffffff"/>
+
+<!-- Tie -->
+<path
+d="
+M150 225
+L160 250
+L150 350
+L140 250
+Z"
+fill="#8B0000"/>
+
+<!-- Tie Knot -->
+<polygon
+points="
+145,220
+155,220
+160,232
+150,240
+140,232"
+fill="#660000"/>
+
+<!-- Left Shoulder -->
+<ellipse
+cx="112"
+cy="245"
+rx="26"
+ry="18"
+fill="url(#suitGradient)"/>
+
+<!-- Right Shoulder -->
+<ellipse
+cx="188"
+cy="245"
+rx="26"
+ry="18"
+fill="url(#suitGradient)"/>
+
+<!-- Main Suit -->
+<path
+d="
+M108 222
+
+Q150 205
+192 222
+
+L212 520
+
+Q150 555
+88 520
+
+Z"
+
+fill="url(#suitGradient)"/>
+
+<!-- Left Coat -->
+<path
+d="
+M110 225
+L145 260
+L138 520
+L88 520
+Z"
+
+fill="#1A2338"/>
+
+<!-- Right Coat -->
+<path
+d="
+M190 225
+L155 260
+L162 520
+L212 520
+Z"
+
+fill="#1A2338"/>
+
+<!-- White Shirt -->
+<path
+d="
+M145 235
+
+L155 235
+
+L165 520
+
+L135 520
+
+Z"
+
+fill="#FDFDFD"/>
+
+<!-- Suit Buttons -->
+<circle cx="150" cy="280" r="3" fill="#D4AF37"/>
+<circle cx="150" cy="320" r="3" fill="#D4AF37"/>
+<circle cx="150" cy="360" r="3" fill="#D4AF37"/>
+<circle cx="150" cy="400" r="3" fill="#D4AF37"/>
+
+<!-- Left Fold -->
+<path
+d="
+M120 260
+Q118 360
+126 500"
+fill="none"
+stroke="#33435F"
+stroke-width="2"
+opacity=".45"/>
+
+<!-- Right Fold -->
+<path
+d="
+M180 260
+Q182 360
+174 500"
+fill="none"
+stroke="#33435F"
+stroke-width="2"
+opacity=".45"/>
+
+<!-- Suit Highlight -->
+<ellipse
+cx="136"
+cy="355"
+rx="18"
+ry="120"
+fill="#ffffff"
+opacity=".05"/>
+
+<!-- Soft Body Glow -->
+<ellipse
+cx="150"
+cy="360"
+rx="95"
+ry="220"
+fill="#ffffff"
+opacity=".02"/>
+  <!-- ==========================================
+     PART 8.2D
+     ARMS + PROPOSAL POSE
+========================================== -->
+
+<!-- ========== LEFT ARM ========== -->
+
+<!-- Sleeve -->
+<path
+d="
+M110 245
+Q78 275
+68 335"
+fill="none"
+stroke="#1A2338"
+stroke-width="28"
+stroke-linecap="round"/>
+
+<!-- Arm -->
+<path
+d="
+M68 335
+Q64 365
+74 395"
+fill="none"
+stroke="url(#skinGradient)"
+stroke-width="18"
+stroke-linecap="round"/>
+
+<!-- Left Hand -->
+<ellipse
+cx="76"
+cy="400"
+rx="11"
+ry="13"
+fill="url(#skinGradient)"/>
+
+<!-- Fingers -->
+<line
+x1="73"
+y1="406"
+x2="69"
+y2="416"
+stroke="#C98A65"
+stroke-width="1.6"
+stroke-linecap="round"/>
+
+<line
+x1="77"
+y1="407"
+x2="77"
+y2="418"
+stroke="#C98A65"
+stroke-width="1.6"
+stroke-linecap="round"/>
+
+<line
+x1="81"
+y1="406"
+x2="85"
+y2="416"
+stroke="#C98A65"
+stroke-width="1.6"
+stroke-linecap="round"/>
+
+<!-- ========== RIGHT ARM ========== -->
+
+<!-- Sleeve -->
+<path
+d="
+M190 245
+Q220 265
+235 320"
+fill="none"
+stroke="#1A2338"
+stroke-width="28"
+stroke-linecap="round"/>
+
+<!-- Arm -->
+<path
+d="
+M235 320
+Q242 345
+230 372"
+fill="none"
+stroke="url(#skinGradient)"
+stroke-width="18"
+stroke-linecap="round"/>
+
+<!-- Right Hand -->
+<ellipse
+cx="228"
+cy="376"
+rx="11"
+ry="13"
+fill="url(#skinGradient)"/>
+
+<!-- Thumb -->
+<ellipse
+cx="233"
+cy="372"
+rx="3"
+ry="5"
+fill="#E5B08B"/>
+
+<!-- ========== HOLDING ROSE ========== -->
+
+<!-- Stem -->
+<line
+x1="218"
+y1="360"
+x2="210"
+y2="245"
+stroke="#2E8B57"
+stroke-width="4"
+stroke-linecap="round"/>
+
+<!-- Leaves -->
+<path
+d="
+M210 300
+Q195 292
+201 315
+Z"
+fill="#3FAF5A"/>
+
+<path
+d="
+M210 325
+Q224 316
+218 340
+Z"
+fill="#3FAF5A"/>
+
+<!-- Rose Flower -->
+<circle
+cx="210"
+cy="232"
+r="13"
+fill="#D10038"/>
+
+<circle
+cx="206"
+cy="228"
+r="7"
+fill="#FF5A7A"/>
+
+<circle
+cx="214"
+cy="228"
+r="7"
+fill="#C70039"/>
+
+<circle
+cx="210"
+cy="236"
+r="7"
+fill="#FF3D6E"/>
+
+<!-- Small Petals -->
+<circle cx="202" cy="233" r="3" fill="#FF88A4"/>
+<circle cx="218" cy="233" r="3" fill="#FF88A4"/>
+
+<!-- Romantic Sparkles -->
+<text
+x="194"
+y="214"
+font-size="12"
+fill="#FFD54F">✨</text>
+
+<text
+x="224"
+y="220"
+font-size="10"
+fill="#FFF59D">✨</text>
+
+<!-- Sleeve Highlights -->
+<path
+d="
+M103 248
+Q95 300
+90 350"
+fill="none"
+stroke="#506080"
+stroke-width="2"
+opacity=".35"/>
+
+<path
+d="
+M197 248
+Q212 290
+220 340"
+fill="none"
+stroke="#506080"
+stroke-width="2"
+opacity=".35"/>
+
+<!-- Soft Hand Shadow -->
+<ellipse
+cx="76"
+cy="406"
+rx="7"
+ry="3"
+fill="#B67C57"
+opacity=".18"/>
+
+<ellipse
+cx="228"
+cy="382"
+rx="7"
+ry="3"
+fill="#B67C57"
+opacity=".18"/>
+  <!-- ==========================================
+     PART 8.2E
+     LEGS + SHOES + FINAL DETAILS
+========================================== -->
+
+<!-- ========== LEFT LEG ========== -->
+
+<path
+d="
+M136 520
+L134 585
+L148 585
+L150 520
+Z"
+fill="url(#skinGradient)"/>
+
+<!-- ========== RIGHT LEG ========== -->
+
+<path
+d="
+M150 520
+L152 585
+L166 585
+L164 520
+Z"
+fill="url(#skinGradient)"/>
+
+<!-- Trouser Left -->
+
+<path
+d="
+M126 430
+L124 585
+L150 585
+L150 430
+Z"
+fill="#1E2435"/>
+
+<!-- Trouser Right -->
+
+<path
+d="
+M150 430
+L150 585
+L176 585
+L174 430
+Z"
+fill="#1E2435"/>
+
+<!-- Trouser Fold -->
+
+<path
+d="
+M138 440
+Q136 520
+140 580"
+fill="none"
+stroke="#45506A"
+stroke-width="2"
+opacity=".4"/>
+
+<path
+d="
+M162 440
+Q164 520
+160 580"
+fill="none"
+stroke="#45506A"
+stroke-width="2"
+opacity=".4"/>
+
+<!-- ==========================
+     LEFT SHOE
+========================== -->
+
+<path
+d="
+M122 585
+
+L155 585
+
+Q162 594
+155 602
+
+L120 602
+
+Q114 594
+122 585
+
+Z"
+
+fill="#101010"/>
+
+<!-- Shoe Shine -->
+
+<path
+d="
+M130 590
+Q142 586
+152 590"
+fill="none"
+stroke="#666"
+stroke-width="2"
+opacity=".5"/>
+
+<!-- ==========================
+     RIGHT SHOE
+========================== -->
+
+<path
+d="
+M145 585
+
+L178 585
+
+Q185 594
+178 602
+
+L143 602
+
+Q137 594
+145 585
+
+Z"
+
+fill="#101010"/>
+
+<path
+d="
+M153 590
+Q165 586
+175 590"
+fill="none"
+stroke="#666"
+stroke-width="2"
+opacity=".5"/>
+
+<!-- Shoe Sole -->
+
+<line
+x1="120"
+y1="602"
+x2="155"
+y2="602"
+stroke="#444"
+stroke-width="2"/>
+
+<line
+x1="143"
+y1="602"
+x2="178"
+y2="602"
+stroke="#444"
+stroke-width="2"/>
+
+<!-- ==========================
+     WATCH
+========================== -->
+
+<circle
+cx="230"
+cy="345"
+r="7"
+fill="#C9A227"/>
+
+<circle
+cx="230"
+cy="345"
+r="4"
+fill="#FFFFFF"/>
+
+<!-- Wrist Band -->
+
+<rect
+x="227"
+y="336"
+width="6"
+height="18"
+rx="2"
+fill="#444"/>
+
+<!-- ==========================
+     GROUND SHADOW
+========================== -->
+
+<ellipse
+cx="150"
+cy="610"
+rx="85"
+ry="12"
+fill="#000000"
+opacity=".15"/>
+
+<!-- ==========================
+     BODY GLOW
+========================== -->
+
+<ellipse
+cx="150"
+cy="340"
+rx="120"
+ry="280"
+fill="#FFFFFF"
+opacity=".02"/>
+
+<!-- ==========================
+     GOLD PARTICLES
+========================== -->
+
+<circle
+cx="70"
+cy="230"
+r="2"
+fill="#FFF3A3"/>
+
+<circle
+cx="230"
+cy="210"
+r="2"
+fill="#FFF3A3"/>
+
+<circle
+cx="55"
+cy="390"
+r="1.8"
+fill="#FFFFFF"/>
+
+<circle
+cx="245"
+cy="410"
+r="1.8"
+fill="#FFFFFF"/>
+
+<!-- Floating Hearts -->
+
+<text
+x="52"
+y="120"
+font-size="13"
+fill="#FF7AAE"
+opacity=".7">❤</text>
+
+<text
+x="242"
+y="150"
+font-size="11"
+fill="#FFC2D8"
+opacity=".7">❤</text>
+
+<!-- Proposal Text -->
+
+<text
+x="150"
+y="635"
+text-anchor="middle"
+font-size="13"
+font-family="Poppins,Arial,sans-serif"
+fill="#F6C14D">
+
+Forever Yours
+
+</text>
+
+<!-- Final Glow -->
+
+<ellipse
+cx="150"
+cy="300"
+rx="140"
+ry="320"
+fill="#ffffff"
+opacity=".015"/>
+  
