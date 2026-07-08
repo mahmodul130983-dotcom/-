@@ -1,0 +1,778 @@
+<svg
+xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 300 700">
+
+<!-- ==========================================
+     PART 9.1A
+     PREMIUM WHITE LILY
+     STEM + LEAVES
+========================================== -->
+
+<defs>
+
+<linearGradient
+id="stemGradient"
+x1="0%"
+y1="0%"
+x2="0%"
+y2="100%">
+
+<stop offset="0%"
+stop-color="#8BD36B"/>
+
+<stop offset="50%"
+stop-color="#4CAF50"/>
+
+<stop offset="100%"
+stop-color="#256D2F"/>
+
+</linearGradient>
+
+<linearGradient
+id="leafGradient"
+x1="0%"
+y1="0%"
+x2="100%"
+y2="100%">
+
+<stop offset="0%"
+stop-color="#8EEB7A"/>
+
+<stop offset="100%"
+stop-color="#2F7F3A"/>
+
+</linearGradient>
+
+<radialGradient
+id="leafGlow">
+
+<stop offset="0%"
+stop-color="#FFFFFF"
+stop-opacity=".25"/>
+
+<stop offset="100%"
+stop-color="#FFFFFF"
+stop-opacity="0"/>
+
+</radialGradient>
+
+</defs>
+
+<!-- ==========================
+     STEM
+========================== -->
+
+<path
+d="
+M150 650
+
+Q152 520
+151 430
+
+Q149 320
+151 220
+
+Q152 140
+150 80
+"
+
+fill="none"
+stroke="url(#stemGradient)"
+stroke-width="8"
+stroke-linecap="round"/>
+
+<!-- Stem Highlight -->
+
+<path
+d="
+M147 650
+
+Q148 520
+148 80
+"
+
+fill="none"
+stroke="#C8FFC4"
+stroke-width="2"
+opacity=".45"/>
+
+<!-- ==========================
+     LEFT LEAF 1
+========================== -->
+
+<path
+d="
+M150 500
+
+Q98 470
+82 425
+
+Q116 432
+150 470
+
+Z"
+
+fill="url(#leafGradient)"/>
+
+<!-- Vein -->
+
+<path
+d="
+M150 470
+Q116 450
+92 432"
+
+fill="none"
+stroke="#D7FFD2"
+stroke-width="1.4"
+opacity=".55"/>
+
+<!-- ==========================
+     RIGHT LEAF 1
+========================== -->
+
+<path
+d="
+M150 430
+
+Q208 405
+225 360
+
+Q188 368
+150 402
+
+Z"
+
+fill="url(#leafGradient)"/>
+
+<path
+d="
+M150 402
+Q185 388
+214 367"
+
+fill="none"
+stroke="#D7FFD2"
+stroke-width="1.4"
+opacity=".55"/>
+
+<!-- ==========================
+     LEFT LEAF 2
+========================== -->
+
+<path
+d="
+M150 320
+
+Q110 300
+94 258
+
+Q124 266
+150 292
+
+Z"
+
+fill="url(#leafGradient)"/>
+
+<path
+d="
+M150 292
+Q126 278
+102 262"
+
+fill="none"
+stroke="#D7FFD2"
+stroke-width="1.3"
+opacity=".5"/>
+
+<!-- ==========================
+     RIGHT LEAF 2
+========================== -->
+
+<path
+d="
+M150 250
+
+Q198 230
+214 188
+
+Q184 196
+150 222
+
+Z"
+
+fill="url(#leafGradient)"/>
+
+<path
+d="
+M150 222
+Q182 208
+205 193"
+
+fill="none"
+stroke="#D7FFD2"
+stroke-width="1.3"
+opacity=".5"/>
+
+<!-- Soft Leaf Glow -->
+
+<ellipse
+cx="150"
+cy="360"
+rx="95"
+ry="260"
+fill="url(#leafGlow)"
+opacity=".25"/>
+  <!-- ==========================================
+     PART 9.1B
+     LILY PETALS
+========================================== -->
+
+<!-- Flower Base -->
+<g id="lilyFlower">
+
+<!-- Center Shadow -->
+<circle
+cx="150"
+cy="110"
+r="20"
+fill="#FFF7D6"
+opacity=".45"/>
+
+<!-- ==========================
+     TOP PETAL
+========================== -->
+
+<path
+d="
+M150 108
+
+Q135 58
+150 20
+
+Q165 58
+150 108
+
+Z"
+
+fill="#FFFFFF"
+stroke="#ECECEC"
+stroke-width="1.4"/>
+
+<!-- ==========================
+     UPPER LEFT
+========================== -->
+
+<path
+d="
+M145 112
+
+Q100 82
+72 48
+
+Q88 92
+135 132
+
+Z"
+
+fill="#FFFFFF"
+stroke="#ECECEC"
+stroke-width="1.4"/>
+
+<!-- ==========================
+     UPPER RIGHT
+========================== -->
+
+<path
+d="
+M155 112
+
+Q200 82
+228 48
+
+Q212 92
+165 132
+
+Z"
+
+fill="#FFFFFF"
+stroke="#ECECEC"
+stroke-width="1.4"/>
+
+<!-- ==========================
+     LOWER LEFT
+========================== -->
+
+<path
+d="
+M145 122
+
+Q98 148
+70 208
+
+Q110 194
+148 148
+
+Z"
+
+fill="#FFFFFF"
+stroke="#ECECEC"
+stroke-width="1.4"/>
+
+<!-- ==========================
+     LOWER RIGHT
+========================== -->
+
+<path
+d="
+M155 122
+
+Q202 148
+230 208
+
+Q190 194
+152 148
+
+Z"
+
+fill="#FFFFFF"
+stroke="#ECECEC"
+stroke-width="1.4"/>
+
+<!-- ==========================
+     BOTTOM PETAL
+========================== -->
+
+<path
+d="
+M150 126
+
+Q132 176
+150 228
+
+Q168 176
+150 126
+
+Z"
+
+fill="#FFFFFF"
+stroke="#ECECEC"
+stroke-width="1.4"/>
+
+<!-- ==========================
+     INNER PETALS
+========================== -->
+
+<ellipse
+cx="150"
+cy="108"
+rx="18"
+ry="28"
+fill="#FFFDF8"
+opacity=".9"/>
+
+<ellipse
+cx="150"
+cy="112"
+rx="10"
+ry="18"
+fill="#FFF6D8"
+opacity=".55"/>
+
+<!-- ==========================
+     PETAL HIGHLIGHTS
+========================== -->
+
+<path
+d="
+M150 98
+Q145 58
+150 32"
+fill="none"
+stroke="#FFFFFF"
+stroke-width="2"
+opacity=".85"/>
+
+<path
+d="
+M118 102
+Q98 82
+82 60"
+fill="none"
+stroke="#FFFFFF"
+stroke-width="2"
+opacity=".75"/>
+
+<path
+d="
+M182 102
+Q202 82
+218 60"
+fill="none"
+stroke="#FFFFFF"
+stroke-width="2"
+opacity=".75"/>
+
+<!-- Soft Glow -->
+<ellipse
+cx="150"
+cy="112"
+rx="105"
+ry="105"
+fill="#FFFFFF"
+opacity=".05"/>
+
+</g>
+  <!-- ==========================================
+     PART 9.1C
+     STAMENS + VEINS + DEW DETAILS
+========================================== -->
+
+<!-- ==========================
+     STAMENS
+========================== -->
+
+<g id="stamens">
+
+<!-- Center Pistil -->
+<line
+x1="150"
+y1="112"
+x2="150"
+y2="72"
+stroke="#8BC34A"
+stroke-width="2.5"
+stroke-linecap="round"/>
+
+<ellipse
+cx="150"
+cy="67"
+rx="4"
+ry="6"
+fill="#9CCC65"/>
+
+<!-- Stamen 1 -->
+<line
+x1="150"
+y1="112"
+x2="132"
+y2="82"
+stroke="#A1887F"
+stroke-width="2"/>
+
+<ellipse
+cx="130"
+cy="79"
+rx="4"
+ry="7"
+fill="#C97C00"/>
+
+<!-- Stamen 2 -->
+<line
+x1="150"
+y1="112"
+x2="168"
+y2="82"
+stroke="#A1887F"
+stroke-width="2"/>
+
+<ellipse
+cx="170"
+cy="79"
+rx="4"
+ry="7"
+fill="#C97C00"/>
+
+<!-- Stamen 3 -->
+<line
+x1="150"
+y1="112"
+x2="124"
+y2="98"
+stroke="#A1887F"
+stroke-width="2"/>
+
+<ellipse
+cx="120"
+cy="96"
+rx="4"
+ry="6"
+fill="#D48806"/>
+
+<!-- Stamen 4 -->
+<line
+x1="150"
+y1="112"
+x2="176"
+y2="98"
+stroke="#A1887F"
+stroke-width="2"/>
+
+<ellipse
+cx="180"
+cy="96"
+rx="4"
+ry="6"
+fill="#D48806"/>
+
+<!-- Stamen 5 -->
+<line
+x1="150"
+y1="112"
+x2="136"
+y2="126"
+stroke="#A1887F"
+stroke-width="2"/>
+
+<ellipse
+cx="133"
+cy="130"
+rx="4"
+ry="6"
+fill="#D48806"/>
+
+<!-- Stamen 6 -->
+<line
+x1="150"
+y1="112"
+x2="164"
+y2="126"
+stroke="#A1887F"
+stroke-width="2"/>
+
+<ellipse
+cx="167"
+cy="130"
+rx="4"
+ry="6"
+fill="#D48806"/>
+
+</g>
+
+<!-- ==========================
+     PETAL VEINS
+========================== -->
+
+<g
+stroke="#F3E7E7"
+stroke-width="1"
+opacity=".55"
+fill="none">
+
+<path d="M150 112 Q150 72 150 28"/>
+<path d="M145 112 Q112 88 82 58"/>
+<path d="M155 112 Q188 88 218 58"/>
+<path d="M145 122 Q112 150 82 198"/>
+<path d="M155 122 Q188 150 218 198"/>
+<path d="M150 126 Q150 176 150 220"/>
+
+</g>
+
+<!-- ==========================
+     DEW DROPS
+========================== -->
+
+<g opacity=".95">
+
+<ellipse
+cx="123"
+cy="63"
+rx="4"
+ry="6"
+fill="#FFFFFF"/>
+
+<circle
+cx="122"
+cy="61"
+r="1.4"
+fill="#BEEFFF"/>
+
+<ellipse
+cx="185"
+cy="92"
+rx="3.5"
+ry="5"
+fill="#FFFFFF"/>
+
+<circle
+cx="184"
+cy="90"
+r="1.2"
+fill="#BEEFFF"/>
+
+<ellipse
+cx="106"
+cy="166"
+rx="4"
+ry="5.5"
+fill="#FFFFFF"/>
+
+<circle
+cx="105"
+cy="164"
+r="1.2"
+fill="#BEEFFF"/>
+
+<ellipse
+cx="166"
+cy="188"
+rx="3.5"
+ry="5"
+fill="#FFFFFF"/>
+
+<circle
+cx="165"
+cy="186"
+r="1.1"
+fill="#BEEFFF"/>
+
+</g>
+
+<!-- ==========================
+     POLLEN
+========================== -->
+
+<g fill="#F4C430" opacity=".65">
+
+<circle cx="142" cy="105" r="1"/>
+<circle cx="157" cy="108" r="1"/>
+<circle cx="151" cy="95" r="1"/>
+<circle cx="147" cy="120" r="1"/>
+<circle cx="160" cy="118" r="1"/>
+
+</g>
+
+<!-- ==========================
+     SOFT FLOWER GLOW
+========================== -->
+
+<ellipse
+cx="150"
+cy="112"
+rx="118"
+ry="118"
+fill="#FFFFFF"
+opacity=".03"/>
+  <!-- ==========================================
+     PART 9.1D
+     FINAL PREMIUM DETAILS
+========================================== -->
+
+<!-- ==========================
+     MAGIC SPARKLES
+========================== -->
+
+<g id="sparkles">
+
+<circle cx="72" cy="46" r="2" fill="#FFF9C4"/>
+<circle cx="228" cy="56" r="2" fill="#FFF9C4"/>
+<circle cx="54" cy="182" r="1.8" fill="#FFFFFF"/>
+<circle cx="248" cy="198" r="1.8" fill="#FFFFFF"/>
+<circle cx="112" cy="26" r="1.5" fill="#FFFDE7"/>
+<circle cx="188" cy="32" r="1.5" fill="#FFFDE7"/>
+
+<text
+x="58"
+y="82"
+font-size="12"
+fill="#FFF8A6"
+opacity=".85">✨</text>
+
+<text
+x="226"
+y="96"
+font-size="12"
+fill="#FFF8A6"
+opacity=".85">✨</text>
+
+<text
+x="90"
+y="170"
+font-size="10"
+fill="#FFFFFF"
+opacity=".8">✦</text>
+
+<text
+x="205"
+y="160"
+font-size="10"
+fill="#FFFFFF"
+opacity=".8">✦</text>
+
+</g>
+
+<!-- ==========================
+     FLOATING PETALS
+========================== -->
+
+<g opacity=".70">
+
+<path
+d="
+M55 245
+Q60 236 67 245
+Q61 255 55 245
+Z"
+fill="#FFFFFF"/>
+
+<path
+d="
+M240 260
+Q246 250 253 260
+Q247 270 240 260
+Z"
+fill="#FFFFFF"/>
+
+<path
+d="
+M90 335
+Q96 326 103 335
+Q97 344 90 335
+Z"
+fill="#FFFDF8"/>
+
+<path
+d="
+M210 352
+Q216 344 223 352
+Q216 362 210 352
+Z"
+fill="#FFFDF8"/>
+
+</g>
+
+<!-- ==========================
+     EXTRA LEAF HIGHLIGHTS
+========================== -->
+
+<path
+d="
+M150 470
+Q118 448
+92 432"
+fill="none"
+stroke="#F4FFF0"
+stroke-width="1.2"
+opacity=".35"/>
+
+<path
+d="
+M150 402
+Q182 387
+214 366"
+fill="none"
+stroke="#F4FFF0"
+stroke-width="1.2"
+opacity=".35"/>
+
+<!-- ==========================
+     STEM SHINE
+========================== -->
+
+<line
+x1="148"
+y1="80"
+x2="148"
+y2="650"
+stroke="#E6FFD9"
+stroke-width="1.
