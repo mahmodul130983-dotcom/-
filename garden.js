@@ -1,1027 +1,1667 @@
-console.log("Garden Loaded ❤️");
+/* ==========================================
+   PART 7.1
+   MEMORY GALLERY
+========================================== */
 
-// ==========================================
-// FLOWER GARDEN FOR SUMU
-// garden.js
-// ==========================================
+const galleryCards =
+document.querySelectorAll(".memory-card");
 
-// ---------- Background Music ----------
+galleryCards.forEach(card=>{
 
-const bgMusic = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicBtn");
+card.addEventListener("mousemove",(e)=>{
 
-if (bgMusic) {
-    bgMusic.volume = 0.45;
+const rect=card.getBoundingClientRect();
 
-    document.addEventListener(
-        "click",
-        () => {
-            bgMusic.play().catch(() => {});
-        },
-        { once: true }
-    );
-}
+const x=e.clientX-rect.left;
 
-if (musicBtn) {
+const y=e.clientY-rect.top;
 
-    musicBtn.addEventListener("click", () => {
+const rotateY=(x-rect.width/2)/18;
 
-        if (bgMusic.paused) {
+const rotateX=(rect.height/2-y)/18;
 
-            bgMusic.play();
+card.style.transform=
 
-            musicBtn.innerHTML = "🔊";
-
-        } else {
-
-            bgMusic.pause();
-
-            musicBtn.innerHTML = "🎵";
-
-        }
-
-    });
-
-}
-
-// ==========================================
-// Dynamic Lily Garden
-// ==========================================
-
-const garden = document.querySelector(".garden");
-
-const lilyTypes = [
-    "lily-small",
-    "lily-medium",
-    "lily-large"
-];
-
-function createLily() {
-
-    if (!garden) return;
-
-    const flower = document.createElement("img");
-
-    flower.src = "assets/img/lily.svg";
-
-    flower.className =
-        "lily-svg " +
-        lilyTypes[Math.floor(Math.random() * lilyTypes.length)];
-
-    flower.style.left = Math.random() * 100 + "%";
-
-    flower.style.bottom =
-        70 + Math.random() * 150 + "px";
-
-    flower.style.opacity =
-        0.7 + Math.random() * 0.3;
-
-    flower.style.animationDelay =
-        Math.random() * 5 + "s";
-
-    garden.appendChild(flower);
-
-}
-
-for (let i = 0; i < 20; i++) {
-
-    createLily();
-
-}
-
-setInterval(() => {
-
-    createLily();
-
-    const flowers =
-        document.querySelectorAll(".lily-svg");
-
-    if (flowers.length > 45) {
-
-        flowers[0].remove();
-
-    }
-
-}, 2500);
-
-// ==========================================
-// Rajanigandha
-// ==========================================
-
-const rajanTypes = [
-    "rajan-small",
-    "rajan-medium",
-    "rajan-large"
-];
-
-function createRajanigandha() {
-
-    if (!garden) return;
-
-    const flower = document.createElement("img");
-
-    flower.src = "assets/img/rajanigandha.svg";
-
-    flower.className =
-        "rajanigandha-svg " +
-        rajanTypes[Math.floor(Math.random() * rajanTypes.length)];
-
-    flower.style.left =
-        Math.random() * 100 + "%";
-
-    flower.style.bottom =
-        80 + Math.random() * 150 + "px";
-
-    garden.appendChild(flower);
-
-}
-
-for (let i = 0; i < 15; i++) {
-
-    createRajanigandha();
-
-}
-
-setInterval(() => {
-
-    createRajanigandha();
-
-    const flowers =
-        document.querySelectorAll(".rajanigandha-svg");
-
-    if (flowers.length > 35) {
-
-        flowers[0].remove();
-
-    }
-
-}, 3500);
-
-// ==========================================
-// Fireflies
-// ==========================================
-
-function firefly() {
-
-    const light =
-        document.createElement("div");
-
-    light.className = "firefly";
-
-    light.style.left =
-        Math.random() * 100 + "vw";
-
-    light.style.top =
-        Math.random() * 100 + "vh";
-
-    document.body.appendChild(light);
-
-    setTimeout(() => {
-
-        light.remove();
-
-    }, 7000);
-
-}
-
-setInterval(firefly, 500);
-
-// ==========================================
-// Falling Petals
-// ==========================================
-
-function petal() {
-
-    const p =
-        document.createElement("div");
-
-    p.className = "petal";
-
-    p.innerHTML = "🌸";
-
-    p.style.left =
-        Math.random() * 100 + "vw";
-
-    p.style.animationDuration =
-        6 + Math.random() * 6 + "s";
-
-    document.body.appendChild(p);
-
-    setTimeout(() => {
-
-        p.remove();
-
-    }, 12000);
-
-}
-
-setInterval(petal, 700);
-
-// ==========================================
-// Floating Hearts
-// ==========================================
-
-function floatingHeart() {
-
-    const heart =
-        document.createElement("div");
-
-    heart.className = "big-heart";
-
-    heart.innerHTML = "💖";
-
-    heart.style.left =
-        Math.random() * 100 + "vw";
-
-    heart.style.bottom = "-40px";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-
-        heart.remove();
-
-    }, 7000);
-
-}
-
-setInterval(floatingHeart, 2000);
-
-// ==========================================
-// Romantic Quotes
-// ==========================================
-
-const quotes = [
-
-    "Every Lily reminds me of you.",
-
-    "You are more beautiful than every flower.",
-
-    "This garden blooms because of your smile.",
-
-    "Forever with you, Sumu ❤️"
-
-];
-
-const quoteBox =
-    document.querySelector(".quote");
-
-if (quoteBox) {
-
-    let index = 0;
-
-    setInterval(() => {
-
-        quoteBox.innerHTML =
-            quotes[index];
-
-        index++;
-
-        if (index >= quotes.length)
-            index = 0;
-
-    }, 5000);
-
-}
-
-// ==========================================
-// Cinematic Ending
-// ==========================================
-
-window.addEventListener("scroll", () => {
-
-    const end =
-        document.getElementById("cinematicEnding");
-
-    if (!end) return;
-
-    if (
-
-        window.innerHeight +
-            window.scrollY >=
-        document.body.offsetHeight - 80
-
-    ) {
-
-        end.classList.add("show");
-
-    }
+`perspective(1200px)
+rotateY(${rotateY}deg)
+rotateX(${rotateX}deg)
+scale(1.05)`;
 
 });
-// ==========================================
-// PART 2
-// Shanto + Sumu Animation
-// ==========================================
 
-const shanto =
-document.querySelector(".shanto-character");
+card.addEventListener("mouseleave",()=>{
 
-const sumu =
-document.querySelector(".sumu-character");
+card.style.transform="";
 
-const proposalText =
-document.querySelector(".proposal-text");
+});
+
+});
+
+/* Floating Hearts */
+
+function memoryHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="memory-heart";
+
+heart.innerHTML=
+
+Math.random()>.5?"❤":"💖";
+
+heart.style.left=
+
+Math.random()*100+"vw";
+
+heart.style.bottom="-40px";
+
+heart.style.animationDuration=
+
+6+Math.random()*4+"s";
+
+heart.style.fontSize=
+
+18+Math.random()*18+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},10000);
+
+}
+
+setInterval(memoryHeart,900);
+
+/* Twinkle Stars */
+
+function memoryStar(){
+
+const star=document.createElement("div");
+
+star.className="memory-star";
+
+star.style.left=
+
+Math.random()*100+"vw";
+
+star.style.top=
+
+Math.random()*100+"vh";
+
+document.body.appendChild(star);
+
+setTimeout(()=>{
+
+star.remove();
+
+},2500);
+
+}
+
+setInterval(memoryStar,250);
+
+/* Fade In */
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.animate([
+
+{
+
+opacity:0,
+
+transform:"translateY(60px)"
+
+},
+
+{
+
+opacity:1,
+
+transform:"translateY(0)"
+
+}
+
+],{
+
+duration:1200,
+
+fill:"forwards"
+
+});
+
+}
+
+});
+
+});
+
+galleryCards.forEach(card=>{
+
+observer.observe(card);
+
+});
+/* ==========================================
+   PART 7.2
+   LIVE ROMANTIC COUNTDOWN
+========================================== */
+
+/* ---------- Next Birthday ---------- */
+
+function getNextBirthday(){
+
+const now = new Date();
+
+let year = now.getFullYear();
+
+/* August = 7 (0 = January) */
+
+let birthday = new Date(year,7,16,0,0,0);
+
+if(now > birthday){
+
+birthday = new Date(year+1,7,16,0,0,0);
+
+}
+
+return birthday.getTime();
+
+}
+
+const targetDate = getNextBirthday();
+
+/* ---------- Elements ---------- */
+
+const dayBox=document.getElementById("days");
+const hourBox=document.getElementById("hours");
+const minuteBox=document.getElementById("minutes");
+const secondBox=document.getElementById("seconds");
+
+/* ---------- Update Timer ---------- */
+
+function updateCountdown(){
+
+const now=new Date().getTime();
+
+const distance=targetDate-now;
+
+if(distance<=0){
+
+if(dayBox) dayBox.innerHTML="00";
+if(hourBox) hourBox.innerHTML="00";
+if(minuteBox) minuteBox.innerHTML="00";
+if(secondBox) secondBox.innerHTML="00";
+
+const title=document.querySelector(".countdown-title");
+
+if(title){
+
+title.innerHTML="🎉 Happy Birthday Sumu ❤️";
+
+}
+
+clearInterval(countdownInterval);
+
+return;
+
+}
+
+const days=Math.floor(
+distance/(1000*60*60*24)
+);
+
+const hours=Math.floor(
+(distance%(1000*60*60*24))/
+(1000*60*60)
+);
+
+const minutes=Math.floor(
+(distance%(1000*60*60))/
+(1000*60)
+);
+
+const seconds=Math.floor(
+(distance%(1000*60))/1000
+);
+
+if(dayBox)
+dayBox.innerHTML=String(days).padStart(2,"0");
+
+if(hourBox)
+hourBox.innerHTML=String(hours).padStart(2,"0");
+
+if(minuteBox)
+minuteBox.innerHTML=String(minutes).padStart(2,"0");
+
+if(secondBox)
+secondBox.innerHTML=String(seconds).padStart(2,"0");
+
+}
+
+/* ---------- Start ---------- */
+
+const countdownInterval=
+setInterval(updateCountdown,1000);
+
+updateCountdown();
+
+/* ==========================================
+   Floating Hearts
+========================================== */
+
+function countdownHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="count-heart";
+
+heart.innerHTML=
+Math.random()>0.5?"💖":"❤️";
+
+heart.style.left=
+Math.random()*100+"vw";
+
+heart.style.animationDuration=
+(6+Math.random()*5)+"s";
+
+heart.style.fontSize=
+(18+Math.random()*18)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},12000);
+
+}
+
+setInterval(countdownHeart,700);
+
+/* ==========================================
+   Twinkle Stars
+========================================== */
+
+function countdownStar(){
+
+const star=document.createElement("div");
+
+star.className="count-star";
+
+star.style.left=
+Math.random()*100+"vw";
+
+star.style.top=
+Math.random()*100+"vh";
+
+document.body.appendChild(star);
+
+setTimeout(()=>{
+
+star.remove();
+
+},2200);
+
+}
+
+setInterval(countdownStar,250);
+
+/* ==========================================
+   Floating Sparkles
+========================================== */
+
+function countdownSparkle(){
+
+const sparkle=document.createElement("div");
+
+sparkle.innerHTML="✨";
+
+sparkle.style.position="fixed";
+
+sparkle.style.left=
+Math.random()*100+"vw";
+
+sparkle.style.top=
+Math.random()*100+"vh";
+
+sparkle.style.fontSize=
+(12+Math.random()*10)+"px";
+
+sparkle.style.pointerEvents="none";
+
+sparkle.style.opacity="0";
+
+sparkle.style.transition="2s";
+
+sparkle.style.zIndex="999";
+
+document.body.appendChild(sparkle);
+
+setTimeout(()=>{
+
+sparkle.style.opacity="1";
+
+sparkle.style.transform="translateY(-40px)";
+
+},50);
+
+setTimeout(()=>{
+
+sparkle.remove();
+
+},2000);
+
+}
+
+setInterval(countdownSparkle,500);
+
+/* ==========================================
+   Countdown Card Animation
+========================================== */
+/* ==========================================
+   PART 7.3
+   CINEMATIC PROPOSAL
+========================================== */
+
+const proposalSection =
+document.querySelector(".proposal-page");
+
+const yesBtn =
+document.getElementById("yesBtn");
+
+const noBtn =
+document.getElementById("noBtn");
+
+/* ==========================================
+   Fade In Proposal
+========================================== */
+
+if(proposalSection){
+
+const proposalObserver =
+new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.animate([
+
+{
+opacity:0,
+transform:"translateY(100px)"
+},
+
+{
+opacity:1,
+transform:"translateY(0)"
+}
+
+],{
+
+duration:1800,
+fill:"forwards",
+easing:"ease-out"
+
+});
+
+}
+
+});
+
+},{threshold:.35});
+
+proposalObserver.observe(proposalSection);
+
+}
+
+/* ==========================================
+   Floating Hearts
+========================================== */
+
+function proposalHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="proposal-heart";
+
+heart.innerHTML=
+Math.random()>.5?"❤️":"💖";
+
+heart.style.left=
+Math.random()*100+"vw";
+
+heart.style.bottom="-50px";
+
+heart.style.animationDuration=
+(6+Math.random()*4)+"s";
+
+heart.style.fontSize=
+(20+Math.random()*20)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},10000);
+
+}
+
+setInterval(proposalHeart,700);
+
+/* ==========================================
+   Sparkles
+========================================== */
+
+function proposalSpark(){
+
+const spark=document.createElement("div");
+
+spark.className="proposal-spark";
+
+spark.style.left=
+Math.random()*100+"vw";
+
+spark.style.top=
+Math.random()*100+"vh";
+
+document.body.appendChild(spark);
+
+setTimeout(()=>{
+
+spark.remove();
+
+},2500);
+
+}
+
+setInterval(proposalSpark,250);
+
+/* ==========================================
+   Love Beam Pulse
+========================================== */
+
+const beam=
+document.querySelector(".love-beam");
+
+if(beam){
+
+setInterval(()=>{
+
+beam.animate([
+
+{
+
+opacity:.3,
+
+transform:"translateX(-50%) scaleX(.9)"
+
+},
+
+{
+
+opacity:1,
+
+transform:"translateX(-50%) scaleX(1.1)"
+
+},
+
+{
+
+opacity:.3,
+
+transform:"translateX(-50%) scaleX(.9)"
+
+}
+
+],{
+
+duration:2000
+
+});
+
+},2000);
+
+}
+
+/* ==========================================
+   YES BUTTON
+========================================== */
+
+if(yesBtn){
+
+yesBtn.addEventListener("click",()=>{
+
+const music=
+document.getElementById("bgMusic");
+
+if(music){
+
+music.play().catch(()=>{});
+
+}
+
+const celebration=
+document.getElementById("yesCelebration");
+
+if(celebration){
+
+celebration.style.display="flex";
+
+}
+
+});
+
+}
+
+/* ==========================================
+   NO BUTTON
+========================================== */
+
+if(noBtn){
+
+const messages=[
+
+"No button doesn't work 😄",
+
+"Please press YES ❤️",
+
+"I'll wait forever 🌸",
+
+"My answer is already YES 💖",
+
+"You can't escape my love ❤️"
+
+];
+
+let index=0;
+
+noBtn.addEventListener("mouseover",()=>{
+
+noBtn.style.position="absolute";
+
+noBtn.style.left=
+Math.random()*75+"%";
+
+noBtn.style.top=
+Math.random()*70+"%";
+
+noBtn.innerHTML=
+messages[index];
+
+index++;
+
+if(index>=messages.length){
+
+index=0;
+
+}
+
+});
+
+}
+
+/* ==========================================
+   Auto Scroll Effect
+========================================== */
 
 window.addEventListener("load",()=>{
 
-    if(shanto){
+window.scrollTo({
 
-        shanto.style.opacity="0";
+top:0,
 
-        shanto.style.transform=
-        "translateX(-200px)";
-
-        setTimeout(()=>{
-
-            shanto.style.transition=
-            "2s ease";
-
-            shanto.style.opacity="1";
-
-            shanto.style.transform=
-            "translateX(0)";
-
-        },500);
-
-    }
-
-    if(sumu){
-
-        sumu.style.opacity="0";
-
-        sumu.style.transform=
-        "translateX(200px)";
-
-        setTimeout(()=>{
-
-            sumu.style.transition=
-            "2s ease";
-
-            sumu.style.opacity="1";
-
-            sumu.style.transform=
-            "translateX(0)";
-
-        },1200);
-
-    }
-
-    if(proposalText){
-
-        proposalText.style.opacity="0";
-
-        proposalText.style.transform=
-        "translateY(40px)";
-
-        setTimeout(()=>{
-
-            proposalText.style.transition=
-            "2s ease";
-
-            proposalText.style.opacity="1";
-
-            proposalText.style.transform=
-            "translateY(0)";
-
-        },2200);
-
-    }
+behavior:"smooth"
 
 });
 
-// ==========================================
-// Floating Hearts Between Them
-// ==========================================
+});
+/* ==========================================
+   PART 7.4
+   YES CELEBRATION
+========================================== */
 
-function createLoveHeart(){
+const yesCelebration =
+document.getElementById("yesCelebration");
 
-    const heart=
-    document.createElement("div");
+/* ==========================
+   YES Button
+========================== */
 
-    heart.innerHTML="💖";
+if(yesBtn){
 
-    heart.className="love-heart";
+yesBtn.addEventListener("click",()=>{
 
-    heart.style.position="fixed";
+if(yesCelebration){
 
-    heart.style.left=
-    (45+Math.random()*10)+"vw";
-
-    heart.style.bottom="25vh";
-
-    heart.style.fontSize=
-    (18+Math.random()*20)+"px";
-
-    heart.style.pointerEvents="none";
-
-    heart.style.transition="5s linear";
-
-    document.body.appendChild(heart);
-
-    setTimeout(()=>{
-
-        heart.style.transform=
-        "translateY(-250px) scale(1.5)";
-
-        heart.style.opacity="0";
-
-    },50);
-
-    setTimeout(()=>{
-
-        heart.remove();
-
-    },5000);
+yesCelebration.style.display="flex";
 
 }
 
-setInterval(createLoveHeart,1200);
-
-// ==========================================
-// Love Glow Animation
-// ==========================================
-
-const glow=
-document.querySelector(".love-glow");
-
-if(glow){
-
-setInterval(()=>{
-
-glow.animate([
-
-{
-opacity:.25,
-transform:"scale(1)"
-},
-
-{
-opacity:.6,
-transform:"scale(1.15)"
-},
-
-{
-opacity:.25,
-transform:"scale(1)"
-}
-
-],{
-
-duration:2500
+startCelebration();
 
 });
 
-},2600);
+}
+
+/* ==========================
+   Celebration
+========================== */
+
+function startCelebration(){
+
+createFireworks();
+
+setInterval(createFireworks,1800);
+
+setInterval(createConfetti,180);
+
+setInterval(createRosePetal,250);
+
+setInterval(createHeartBlast,450);
+
+setInterval(createGoldenSparkle,120);
 
 }
 
-// ==========================================
-// Flower Ring Rotation
-// ==========================================
+/* ==========================
+   Fireworks
+========================== */
 
-const flowerRing=
-document.querySelector(".flower-ring");
+function createFireworks(){
 
-if(flowerRing){
+for(let i=0;i<30;i++){
 
-let deg=0;
+const fire=document.createElement("div");
 
-setInterval(()=>{
+fire.className="firework";
 
-deg+=0.25;
+fire.style.left=Math.random()*100+"vw";
 
-flowerRing.style.transform=
+fire.style.top=Math.random()*70+"vh";
 
-`rotate(${deg}deg)`;
+fire.style.setProperty(
 
-},20);
+"--x",
+
+(-180+Math.random()*360)+"px"
+
+);
+
+fire.style.setProperty(
+
+"--y",
+
+(-180+Math.random()*360)+"px"
+
+);
+
+fire.style.background=
+
+`hsl(${Math.random()*360},100%,70%)`;
+
+document.body.appendChild(fire);
+
+setTimeout(()=>{
+
+fire.remove();
+
+},1800);
 
 }
-// ==========================================
-// PART 3
-// Premium Cinematic Effects
-// ==========================================
 
-// ---------- Moon Glow ----------
-
-const moon =
-document.querySelector(".moon");
-
-if(moon){
-
-setInterval(()=>{
-
-moon.animate([
-
-{
-transform:"scale(1)",
-filter:"drop-shadow(0 0 30px white)"
-},
-
-{
-transform:"scale(1.08)",
-filter:"drop-shadow(0 0 80px #fff)"
-},
-
-{
-transform:"scale(1)",
-filter:"drop-shadow(0 0 30px white)"
 }
 
-],{
+/* ==========================
+   Confetti
+========================== */
 
-duration:4000
+function createConfetti(){
 
-});
+const c=document.createElement("div");
+
+c.className="confetti";
+
+c.style.left=Math.random()*100+"vw";
+
+c.style.animationDuration=
+
+(4+Math.random()*4)+"s";
+
+c.style.background=
+
+`hsl(${Math.random()*360},90%,65%)`;
+
+document.body.appendChild(c);
+
+setTimeout(()=>{
+
+c.remove();
+
+},9000);
+
+}
+
+/* ==========================
+   Rose Petals
+========================== */
+
+function createRosePetal(){
+
+const petal=document.createElement("div");
+
+petal.className="rose-petal";
+
+petal.innerHTML=
+
+Math.random()>.5?"🌹":"🌸";
+
+petal.style.left=
+
+Math.random()*100+"vw";
+
+petal.style.animationDuration=
+
+(5+Math.random()*5)+"s";
+
+document.body.appendChild(petal);
+
+setTimeout(()=>{
+
+petal.remove();
+
+},10000);
+
+}
+
+/* ==========================
+   Hearts
+========================== */
+
+function createHeartBlast(){
+
+const heart=document.createElement("div");
+
+heart.className="big-love-heart";
+
+heart.innerHTML=
+
+Math.random()>.5?"❤️":"💖";
+
+heart.style.left=
+
+50+"vw";
+
+heart.style.top=
+
+55+"vh";
+
+heart.style.setProperty(
+
+"--moveX",
+
+(-450+Math.random()*900)+"px"
+
+);
+
+heart.style.setProperty(
+
+"--moveY",
+
+(-450+Math.random()*900)+"px"
+
+);
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
 
 },4000);
 
 }
 
-// ==========================================
-// Golden Sparkles
-// ==========================================
+/* ==========================
+   Sparkles
+========================== */
 
 function createGoldenSparkle(){
 
-const s =
-document.createElement("div");
+const star=document.createElement("div");
 
-s.innerHTML="✨";
+star.className="goldSparkle";
 
-s.className="goldSparkle";
+star.innerHTML="✨";
 
-s.style.left=
+star.style.left=
+
 Math.random()*100+"vw";
 
-s.style.top=
+star.style.top=
+
 Math.random()*100+"vh";
 
-s.style.fontSize=
-(10+Math.random()*18)+"px";
-
-document.body.appendChild(s);
+document.body.appendChild(star);
 
 setTimeout(()=>{
 
-s.animate([
+star.remove();
 
-{
-opacity:0,
-transform:"translateY(0) scale(.3)"
-},
+},2500);
 
-{
-opacity:1,
-transform:"translateY(-25px) scale(1)"
-},
-
-{
-opacity:0,
-transform:"translateY(-60px) scale(1.5)"
 }
 
-],{
+/* ==========================
+   Music
+========================== */
 
-duration:2200
+const bgMusic=
+
+document.getElementById("bgMusic");
+
+if(bgMusic){
+
+bgMusic.volume=.45;
+
+}
+
+/* ==========================
+   Fade In Music
+========================== */
+
+function playRomanticMusic(){
+
+if(!bgMusic) return;
+
+bgMusic.play().catch(()=>{});
+
+let volume=0;
+
+bgMusic.volume=0;
+
+const fade=setInterval(()=>{
+
+volume+=0.03;
+
+bgMusic.volume=Math.min(volume,.45);
+
+if(volume>=.45){
+
+clearInterval(fade);
+
+}
+
+},250);
+
+}
+
+if(yesBtn){
+
+yesBtn.addEventListener("click",playRomanticMusic);
+
+}
+/* ==========================================
+   PART 7.5
+   FOREVER ENDING
+========================================== */
+
+const foreverEnding =
+document.getElementById("foreverEnding");
+
+/* ==========================
+   Show Ending
+========================== */
+
+function showForeverEnding(){
+
+if(!foreverEnding) return;
+
+foreverEnding.style.display="flex";
+
+createEndingEffects();
+
+}
+
+/* ==========================
+   Auto Show After YES
+========================== */
+
+if(yesBtn){
+
+yesBtn.addEventListener("click",()=>{
+
+setTimeout(()=>{
+
+showForeverEnding();
+
+},12000);
 
 });
 
-},20);
-
-setTimeout(()=>{
-
-s.remove();
-
-},2300);
-
 }
 
-setInterval(createGoldenSparkle,350);
+/* ==========================
+   Forever Flowers
+========================== */
 
-// ==========================================
-// Dream Particles
-// ==========================================
+function foreverFlower(){
 
-function dreamParticle(){
+const flower=document.createElement("div");
 
-const p=
-document.createElement("div");
+flower.className="forever-flower";
 
-p.className="dream-particle";
+const flowers=[
 
-p.innerHTML="🤍";
+"🌸",
+"🌹",
+"🌺",
+"🌼",
+"💐",
+"🤍"
 
-p.style.left=
+];
+
+flower.innerHTML=
+
+flowers[
+Math.floor(Math.random()*flowers.length)
+];
+
+flower.style.left=
+
 Math.random()*100+"vw";
 
-p.style.top="-20px";
+flower.style.bottom="-50px";
 
-p.style.fontSize=
-(12+Math.random()*20)+"px";
+flower.style.animationDuration=
 
-document.body.appendChild(p);
+(8+Math.random()*6)+"s";
 
-p.animate([
-
-{
-transform:"translateY(0)",
-opacity:0
-},
-
-{
-opacity:1
-},
-
-{
-transform:"translateY(110vh)",
-opacity:0
-}
-
-],{
-
-duration:9000+Math.random()*5000
-
-});
+foreverEnding.appendChild(flower);
 
 setTimeout(()=>{
 
-p.remove();
+flower.remove();
+
+},15000);
+
+}
+
+/* ==========================
+   Forever Hearts
+========================== */
+
+function foreverHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="forever-heart";
+
+heart.innerHTML=
+
+Math.random()>.5?"❤️":"💖";
+
+heart.style.left=
+
+Math.random()*100+"vw";
+
+heart.style.bottom="-40px";
+
+heart.style.animationDuration=
+
+(7+Math.random()*5)+"s";
+
+foreverEnding.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
 
 },14000);
 
 }
 
-setInterval(dreamParticle,700);
+/* ==========================
+   Stars
+========================== */
 
-// ==========================================
-// Magic Wind
-// ==========================================
+function foreverStar(){
 
-const flowers=document.querySelectorAll(
-".lily-svg,.rajanigandha-svg"
-);
+const star=document.createElement("div");
 
-flowers.forEach((flower,index)=>{
+star.className="forever-star";
 
-setInterval(()=>{
+star.style.left=
 
-flower.animate([
-
-{
-transform:"rotate(-2deg)"
-},
-
-{
-transform:"rotate(3deg)"
-},
-
-{
-transform:"rotate(-2deg)"
-}
-
-],{
-
-duration:3500+(index*80)
-
-});
-
-},3500);
-
-});
-
-// ==========================================
-// Proposal Text Glow
-// ==========================================
-
-const title=
-document.querySelector(".proposal-text h2");
-
-if(title){
-
-setInterval(()=>{
-
-title.animate([
-
-{
-textShadow:"0 0 10px white"
-},
-
-{
-textShadow:"0 0 35px hotpink"
-},
-
-{
-textShadow:"0 0 10px white"
-}
-
-],{
-
-duration:2500
-
-});
-
-},2600);
-
-}
-
-// ==========================================
-// Floating Love Symbols
-// ==========================================
-
-const icons=["❤","💖","💕","✨","🌸"];
-
-setInterval(()=>{
-
-const icon=
-document.createElement("div");
-
-icon.innerHTML=
-icons[Math.floor(Math.random()*icons.length)];
-
-icon.style.position="fixed";
-
-icon.style.left=
 Math.random()*100+"vw";
 
-icon.style.bottom="-30px";
+star.style.top=
 
-icon.style.fontSize=
-(18+Math.random()*20)+"px";
+Math.random()*100+"vh";
 
-icon.style.pointerEvents="none";
-
-icon.style.zIndex="999";
-
-document.body.appendChild(icon);
-
-icon.animate([
-
-{
-transform:"translateY(0)",
-opacity:0
-},
-
-{
-opacity:1
-},
-
-{
-transform:"translateY(-120vh)",
-opacity:0
-}
-
-],{
-
-duration:7000
-
-});
+foreverEnding.appendChild(star);
 
 setTimeout(()=>{
 
-icon.remove();
+star.remove();
 
-},7000);
+},2500);
 
-},900);
-// ==========================================
-// PART 4
-// Final Cinematic Ending
-// ==========================================
+}
 
-// ---------- Cinematic Ending ----------
+/* ==========================
+   Quote Rotation
+========================== */
 
-const ending =
-document.getElementById("cinematicEnding");
+const foreverQuotes=[
 
-let endingPlayed = false;
+"Forever With Sumu ❤️",
 
-window.addEventListener("scroll", () => {
+"You Are My Favorite Place.",
 
-    if (endingPlayed) return;
+"Our Story Never Ends.",
 
-    if (
-        window.innerHeight + window.scrollY >=
-        document.body.scrollHeight - 120
-    ) {
+"I Will Choose You Every Time.",
 
-        endingPlayed = true;
+"Love Beyond Infinity ♾️"
 
-        if (ending) {
+];
 
-            ending.style.display = "flex";
+function rotateQuote(){
 
-            setTimeout(() => {
+const quote=
 
-                ending.classList.add("show");
+document.querySelector(".forever-quote");
 
-            }, 100);
+if(!quote) return;
 
-        }
+let index=0;
 
-        launchEndingEffects();
+quote.innerHTML=
 
-    }
+foreverQuotes[index];
+
+setInterval(()=>{
+
+index++;
+
+if(index>=foreverQuotes.length){
+
+index=0;
+
+}
+
+quote.innerHTML=
+
+foreverQuotes[index];
+
+},4500);
+
+}
+
+/* ==========================
+   Effects
+========================== */
+
+function createEndingEffects(){
+
+rotateQuote();
+
+setInterval(foreverFlower,250);
+
+setInterval(foreverHeart,400);
+
+setInterval(foreverStar,180);
+
+}
+
+/* ==========================
+   Infinity Glow
+========================== */
+
+const
+    /* ==========================================
+   PART 7.5
+   FOREVER ENDING
+========================================== */
+
+const foreverEnding =
+document.getElementById("foreverEnding");
+
+/* ==========================
+   Show Ending
+========================== */
+
+function showForeverEnding(){
+
+if(!foreverEnding) return;
+
+foreverEnding.style.display="flex";
+
+createEndingEffects();
+
+}
+
+/* ==========================
+   Auto Show After YES
+========================== */
+
+if(yesBtn){
+
+yesBtn.addEventListener("click",()=>{
+
+setTimeout(()=>{
+
+showForeverEnding();
+
+},12000);
 
 });
 
-// ==========================================
-// Forever Hearts
-// ==========================================
+}
 
-function foreverHeart() {
+/* ==========================
+   Forever Flowers
+========================== */
 
-    const heart = document.createElement("div");
+function foreverFlower(){
 
-    heart.className = "foreverHeart";
+const flower=document.createElement("div");
 
-    heart.innerHTML = "❤️";
+flower.className="forever-flower";
 
-    heart.style.left =
-    Math.random() * 100 + "vw";
+const flowers=[
 
-    heart.style.fontSize =
-    (20 + Math.random() * 25) + "px";
+"🌸",
+"🌹",
+"🌺",
+"🌼",
+"💐",
+"🤍"
 
-    document.body.appendChild(heart);
+];
 
-    heart.animate([
+flower.innerHTML=
 
-        {
-            transform:"translateY(0)",
-            opacity:0
-        },
+flowers[
+Math.floor(Math.random()*flowers.length)
+];
 
-        {
-            opacity:1
-        },
+flower.style.left=
 
-        {
-            transform:"translateY(-120vh)",
-            opacity:0
-        }
+Math.random()*100+"vw";
 
-    ],{
+flower.style.bottom="-50px";
 
-        duration:9000
+flower.style.animationDuration=
 
-    });
+(8+Math.random()*6)+"s";
 
-    setTimeout(()=>{
+foreverEnding.appendChild(flower);
 
-        heart.remove();
+setTimeout(()=>{
 
-    },9000);
+flower.remove();
+
+},15000);
 
 }
 
-// ==========================================
-// Ending Sparkles
-// ==========================================
+/* ==========================
+   Forever Hearts
+========================== */
 
-function endingSparkle(){
+function foreverHeart(){
 
-    const s=document.createElement("div");
+const heart=document.createElement("div");
 
-    s.innerHTML="✨";
+heart.className="forever-heart";
 
-    s.className="goldSparkle";
+heart.innerHTML=
 
-    s.style.left=Math.random()*100+"vw";
+Math.random()>.5?"❤️":"💖";
 
-    s.style.top=Math.random()*100+"vh";
+heart.style.left=
 
-    document.body.appendChild(s);
+Math.random()*100+"vw";
 
-    setTimeout(()=>{
+heart.style.bottom="-40px";
 
-        s.remove();
+heart.style.animationDuration=
 
-    },2500);
+(7+Math.random()*5)+"s";
 
-}
+foreverEnding.appendChild(heart);
 
-// ==========================================
-// Ending Flowers
-// ==========================================
+setTimeout(()=>{
 
-function endingFlower(){
+heart.remove();
 
-    const flower=document.createElement("div");
-
-    const flowers=[
-
-        "🌸",
-        "🌺",
-        "🌷",
-        "💮",
-        "🌼"
-
-    ];
-
-    flower.innerHTML=
-
-    flowers[
-    Math.floor(
-    Math.random()*flowers.length
-    )
-    ];
-
-    flower.style.position="fixed";
-
-    flower.style.left=
-    Math.random()*100+"vw";
-
-    flower.style.top="-50px";
-
-    flower.style.fontSize=
-    (20+Math.random()*30)+"px";
-
-    flower.style.pointerEvents="none";
-
-    flower.style.zIndex="999999";
-
-    document.body.appendChild(flower);
-
-    flower.animate([
-
-        {
-
-            transform:"translateY(0) rotate(0deg)",
-
-            opacity:0
-
-        },
-
-        {
-
-            opacity:1
-
-        },
-
-        {
-
-            transform:"translateY(120vh) rotate(720deg)",
-
-            opacity:0
-
-        }
-
-    ],{
-
-        duration:8000
-
-    });
-
-    setTimeout(()=>{
-
-        flower.remove();
-
-    },8000);
+},14000);
 
 }
 
-// ==========================================
-// Launch Ending Effects
-// ==========================================
+/* ==========================
+   Stars
+========================== */
 
-function launchEndingEffects(){
+function foreverStar(){
 
-    setInterval(foreverHeart,400);
+const star=document.createElement("div");
 
-    setInterval(endingSparkle,180);
+star.className="forever-star";
 
-    setInterval(endingFlower,700);
+star.style.left=
+
+Math.random()*100+"vw";
+
+star.style.top=
+
+Math.random()*100+"vh";
+
+foreverEnding.appendChild(star);
+
+setTimeout(()=>{
+
+star.remove();
+
+},2500);
 
 }
 
-// ==========================================
-// Auto Music
-// ==========================================
+/* ==========================
+   Quote Rotation
+========================== */
 
-window.addEventListener("load",()=>{
+const foreverQuotes=[
 
-    const music=document.getElementById("bgMusic");
+"Forever With Sumu ❤️",
 
-    if(!music) return;
+"You Are My Favorite Place.",
 
-    music.volume=0.45;
+"Our Story Never Ends.",
 
-    music.play().catch(()=>{
+"I Will Choose You Every Time.",
 
-        document.body.addEventListener("click",()=>{
+"Love Beyond Infinity ♾️"
 
-            music.play();
+];
 
-        },{once:true});
+function rotateQuote(){
 
-    });
+const quote=
+
+document.querySelector(".forever-quote");
+
+if(!quote) return;
+
+let index=0;
+
+quote.innerHTML=
+
+foreverQuotes[index];
+
+setInterval(()=>{
+
+index++;
+
+if(index>=foreverQuotes.length){
+
+index=0;
+
+}
+
+quote.innerHTML=
+
+foreverQuotes[index];
+
+},4500);
+
+}
+
+/* ==========================
+   Effects
+========================== */
+
+function createEndingEffects(){
+
+rotateQuote();
+
+setInterval(foreverFlower,250);
+
+setInterval(foreverHeart,400);
+
+setInterval(foreverStar,180);
+
+}
+
+/* ==========================
+   Infinity Glow
+========================== */
+
+const infinity=
+
+document.querySelector(".infinity-symbol");
+
+if(infinity){
+
+setInterval(()=>{
+
+infinity.animate([
+
+{
+
+transform:"rotate(0deg) scale(1)"
+
+},
+
+{
+
+transform:"rotate(180deg) scale(1.15)"
+
+},
+
+{
+
+transform:"rotate(360deg) scale(1)"
+
+}
+
+],{
+
+duration:6000,
+
+iterations:1,
+
+easing:"ease-in-out"
 
 });
 
-// ==========================================
-// Final Message
-// ==========================================
+},6000);
 
-console.log("❤️ Forever Together ❤️");
-console.log("Made with Love for Sumu");
+}
+
+/* ==========================
+   Music Fade
+========================== */
+
+if(bgMusic){
+
+window.addEventListener("beforeunload",()=>{
+
+let fade=
+
+setInterval(()=>{
+
+if(bgMusic.volume>0.02){
+
+bgMusic.volume-=0.02;
+
+}else{
+
+clearInterval(fade);
+
+}
+
+},150);
+
+});
+
+}
+/* ==========================================
+   PART 7.6
+   FINAL MASTER SCRIPT
+========================================== */
+
+console.log("Infinity Love Loaded ❤️");
+
+/* ==========================
+   Smooth Scroll
+========================== */
+
+document.documentElement.style.scrollBehavior="smooth";
+
+/* ==========================
+   Reveal Animation
+========================== */
+
+const revealItems=document.querySelectorAll(
+
+".love-section,.proposal-scene,.memory-card,.countdown-section,.hero,.message"
+
+);
+
+const revealObserver=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},{
+threshold:.15
+});
+
+revealItems.forEach(item=>{
+
+revealObserver.observe(item);
+
+});
+
+/* ==========================
+   Auto Background Music
+========================== */
+
+const music=document.getElementById("bgMusic");
+
+function startMusic(){
+
+if(!music) return;
+
+music.volume=.4;
+
+music.play().catch(()=>{});
+
+document.removeEventListener("click",startMusic);
+
+document.removeEventListener("touchstart",startMusic);
+
+}
+
+document.addEventListener("click",startMusic);
+
+document.addEventListener("touchstart",startMusic);
+
+/* ==========================
+   Floating Dreams
+========================== */
+
+function dreamParticle(){
+
+const p=document.createElement("div");
+
+p.className="dream-particle";
+
+const items=[
+
+"✨",
+"🤍",
+"🌸",
+"💖",
+"🌺"
+
+];
+
+p.innerHTML=
+
+items[Math.floor(Math.random()*items.length)];
+
+p.style.left=
+
+Math.random()*100+"vw";
+
+p.style.top=
+
+Math.random()*100+"vh";
+
+p.style.fontSize=
+
+(14+Math.random()*18)+"px";
+
+document.body.appendChild(p);
+
+setTimeout(()=>{
+
+p.animate([
+
+{
+
+transform:"translateY(0)",
+
+opacity:1
+
+},
+
+{
+
+transform:"translateY(-120px)",
+
+opacity:0
+
+}
+
+],{
+
+duration:4000,
+
+fill:"forwards"
+
+});
+
+},50);
+
+setTimeout(()=>{
+
+p.remove();
+
+},4200);
+
+}
+
+setInterval(dreamParticle,600);
+
+/* ==========================
+   Cursor Glow
+========================== */
+
+const glow=document.createElement("div");
+
+glow.style.position="fixed";
+
+glow.style.width="20px";
+
+glow.style.height="20px";
+
+glow.style.borderRadius="50%";
+
+glow.style.pointerEvents="none";
+
+glow.style.background="rgba(255,192,203,.5)";
+
+glow.style.filter="blur(8px)";
+
+glow.style.zIndex="999999";
+
+document.body.appendChild(glow);
+
+document.addEventListener("mousemove",(e)=>{
+
+glow.style.left=e.clientX-10+"px";
+
+glow.style.top=e.clientY-10+"px";
+
+});
+
+/* ==========================
+   Random Romantic Messages
+========================== */
+
+const romanticTexts=[
+
+"I Love You Sumu ❤️",
+
+"You Are My Forever 🌸",
+
+"My Heart Belongs To You 🤍",
+
+"Every Flower Reminds Me Of You 🌺",
+
+"Forever Together ♾️"
+
+];
+
+setInterval(()=>{
+
+const text=document.createElement("div");
+
+text.innerHTML=
+
+romanticTexts[
+Math.floor(Math.random()*romanticTexts.length)
+];
+
+text.style.position="fixed";
+
+text.style.left=
+
+20+Math.random()*60+"vw";
+
+text.style.top=
+
+20+Math.random()*60+"vh";
+
+text.style.color="white";
+
+text.style.fontSize="18px";
+
+text.style.opacity=".85";
+
+text.style.pointerEvents="none";
+
+text.style.zIndex="99999";
+
+document.body.appendChild(text);
+
+text.animate([
+
+{
+
+opacity:0,
+
+transform:"translateY(20px)"
+
+},
+
+{
+
+opacity:1,
+
+transform:"translateY(0)"
+
+},
